@@ -10,22 +10,33 @@ const Home = () => {
     const [sort, setSort] = useState('default');
     const [page, setPage] = useState(1);
     const [filters, setFilters] = useState({});
+    
+    const buildParams = (filters, sort, page) => {
+        const params = new URLSearchParams();
 
-    const fetchProperties = async (filterValues = filters, sortValue = sort, pageValue = page) => {
-        const params = new URLSearchParams({
-            ...filterValues,
-            sort: sortValue,
-            page: pageValue,
-            limit: 9,
-        }).toString();
+        Object.entries(filters).forEach(([key, value]) => {
+            if (value) params.append(key, value);
+            
+        });
+        if ( sort && sort !== 'default') params.append('sort', sort);
+        params.append('page', page);
+        params.append('limit', 9);
+        return params.toString();
+    };
 
+    const fetchProperties = async () => {
+        const params = buildParams(filters, sort, page);
+        const url = `https://betahouse-backend-twfz.onrender.com/api/v1/properties?${params}`;
+       console.log("Fetching URL:", url);
         
         try {
-            const res = await fetch(`https://betahouse-backend-twfz.onrender.com/api/v1/properties?${params}`);
+            const res = await fetch(url);
+            console.log("STATUS:", res.status);
             const data = await res.json();
-            setProperties(data.properties);
+            console.log("FULL RESPONSE:", data);
+            setProperties(data.properties || []);
         } catch (error) {
-            console.log(error)
+            console.log("FETCH ERROR:", error);
         }
     };
 
@@ -37,7 +48,7 @@ const Home = () => {
 
     useEffect(() => {
         fetchProperties(filters, sort, page);
-    }, [ sort, page]);
+    }, [filters, sort, page]);
     //  useEffect(() => {
     //     fetch("https://betahouse-backend-twfz.onrender.com/api/v1/properties").then((res) => res.json())
     //     .then((data) => {
@@ -73,7 +84,7 @@ const Home = () => {
                     </select>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     {properties.map((property) => (
                         <PropertyCard key={property._id} property={property} />
                     ))}
