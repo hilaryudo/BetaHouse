@@ -8,7 +8,7 @@ import like from '../assets/like.png'
 
 const PropertyCard = ({ property }) => {
   return (
-    <div className='w-[397px] h-[566px]'>
+    <div className='md:w-[397px] w-full h-[566px] lg:mx-auto'>
       <div >
         <img src={property.image} alt={property.title} className='w-full h-[297px] object-cover rounded-t-[10px]' />
       </div>
@@ -25,7 +25,7 @@ const PropertyCard = ({ property }) => {
             <img src={bedroom} alt="Bedroom icon" />
             <p className='font-[Outfit] font-normal text-[16px] text-[#666666]'>{property.numberOfBedrooms} Bedrooms</p>
           </div>
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center gap-3 '>
             <img src={bathroom} alt="Bathroom icon" />
             <p className='font-[Outfit] font-normal text-[16px] text-[#666666]'>{property.numberOfBathrooms} Bathrooms</p>
           </div>
@@ -33,7 +33,7 @@ const PropertyCard = ({ property }) => {
         </div>
 
         <div className='border-t  border-[#E8E8E8] py-4  flex justify-between items-center'>
-          <p className='font-[Outfit] font-semibold text-[22px] text-[#373737]'>$ {property.price}</p>
+          <p className='font-[Outfit] font-semibold text-[22px]  text-[#373737]'>$ {property.price}</p>
           <div className='flex items-center gap-4'>
             <img src={filter} alt="Filter icon" />
             <img src={share} alt="Share icon" />
