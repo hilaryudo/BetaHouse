@@ -64,7 +64,7 @@ const SignIn = () => {
 
   return (
     <div className='wrapper md:flex items-center gap-[33px]'>
-      <div className='md:w-1/2 h-[854px] py-10 md:py-15 lg:w-1/2'>
+      <div className='md:w-1/2 h-[854px] py-10 md:py-15 '>
         <h2 className='font-[Outfit] font-semibold text-[#181A20] text-[26px] md:text-[28px] lg:text-[32px] mb-2'>Welcome Back to BetaHouse!</h2>
         <p className='font-normal font-[Outfit] text-[16px] text-[#181A20]/82 mb-9'>Let's get started by filling out the information below</p>
 

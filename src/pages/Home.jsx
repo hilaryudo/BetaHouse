@@ -53,7 +53,7 @@ const Home = () => {
 
     return (
         <div>
-            <main className='md:mx-auto lg:w-[1300px]'>
+            <main className='md:mx-auto lg:mx-auto'>
                 <div className='md:h-[680px] h-[720px] w-full bg-cover bg-center' style={{ backgroundImage: `url(${bgImage})` }}>
                     <Navbar />
                     <div className=''>
@@ -67,7 +67,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='wrapper'>
+                <div className='wrapper lg:w-[1240px]'>
                     <div className='flex justify-between items-center my-6'>
                         <p className='text-[#181A20] font-normal font-[Outfit] md:text-[21px] text-[16px]'>Showing {properties.length} results</p>
                         <select className='border px-3 py-2 rounded-lg text-[#181A20] font-[Outfit] font-normal md:text-[21px] text-[16px]'
@@ -79,7 +79,7 @@ const Home = () => {
                         </select>
                     </div>
 
-                    <div className='grid grid-cols-1 md:grid-cols-3  lg:grid-cols-2 gap-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 lg:w-[1200px]'>
                         {properties.map((property) => (
                             <PropertyCard key={property._id} property={property} />
                         ))}

@@ -33,7 +33,7 @@ const PopularProperties = () => {
   };
 
   return (
-    <div className='w-full mt-20 '>
+    <div className='w-full mt-20 lg:w-[1287px] lg:pr-10'>
       <h2 className='text-center mb-10 font-[Outfit] font-semibold text-[30px] md:text-[50px] text-[#0F1A1E]'>
         Discover Our Popular Properties
       </h2>
@@ -44,10 +44,10 @@ const PopularProperties = () => {
         </button>
 
         <div className='overflow-hidden'>
-          <div className='md:flex gap-6 transition-transform duration-500' style={{ transform: `translateX(-${index * 320}px)` }}>
+          <div className='md:flex gap-7 transition-transform duration-500' style={{ transform: `translateX(-${index * 320}px)` }}>
             {properties.map((property) => (
               <Link to={`/property/${property._id}`}>
-                <div key={property._id} className='min-w-[310px] rounded-[7px] overflow-hidden relative mt-4 md:mt-0'>
+                <div key={property._id} className='w-[280px] rounded-[7px] overflow-hidden relative mt-4 md:mt-0'>
                   <img src={property.image} alt={property.title} className='w-full h-[412px] object-cover' />
                   <div className='absolute bottom-0 left-0  w-full h-[142px] bg-[#4A4A4A]/30 p-3' >
                     <h3 className='font-[Outfit] font-semibold text-[18px] text-[#FFFFFF]'>{property.title}</h3>
@@ -69,7 +69,7 @@ const PopularProperties = () => {
           </div>
         </div>
 
-        <button className='absolute right-0 top-1/6 translate-y-1/2 bg-[#4BA586] p-3 rounded-full shadow-md z-10' onClick={nextSlide}>
+        <button className='absolute lg:right-12 md:right-0 top-1/6 translate-y-1/2 bg-[#4BA586] p-3 rounded-full shadow-md z-10' onClick={nextSlide}>
           <img src={right} alt="Next" />
         </button>
       </div>

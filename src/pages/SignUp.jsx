@@ -79,10 +79,10 @@ const SignUp = () => {
 
 
   return (
-    <div className='wrapper md:flex items-center gap-[33px] '>
+    <div className='lg:pl-20 md:flex items-center gap-[33px]'>
       <div className='md:w-1/2 h-[854px] lg:w-1/2'>
         <div>
-          <h2 className='font-[Outfit] font-semibold text-[22px] md:text-[28px] text-[#181A20] leading-[26px] mb-4'>Join our community of home seekers and explore the possibilities that await</h2>
+          <h2 className='font-[Outfit] font-semibold text-[22px] md:text-[28px] text-[#181A20] leading-[26px]'>Join our community of home seekers and explore the possibilities that await</h2>
           <p className='font-[Outfit] font-normal text-[15px] md:text-[16px] text-[#181A20]/82 mb-7'>Let's get started by filling our information below</p>
 
           {error && (

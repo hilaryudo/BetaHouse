@@ -10,5 +10,5 @@
 
 
 .wrapper {
-  @apply w-full mx-auto py-10 px-4 md:py-5 md:px-14 lg:px-40 overflow-x-hidden;
+  @apply w-full mx-auto py-10 px-4 md:py-5 md:px-14 overflow-x-hidden;
 }

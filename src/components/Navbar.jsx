@@ -13,7 +13,7 @@ const Navbar = () => {
                     <p className='font-[Poppins] text-[29px] font-medium text-[#FFFFFF]'>BetaHouse</p>
                 </div>
 
-                <div className=' hidden md:flex items-center gap-5 text-[#F5F5F5] font-medium text-[20px] lg:text-[16px] font-[Exo2]'>
+                <div className=' hidden md:flex items-center gap-5 text-[#F5F5F5] font-medium text-[20px] lg:text-[24px] font-[Exo2]'>
                     <Link to="/">
                         <p>Home</p>
                     </Link>

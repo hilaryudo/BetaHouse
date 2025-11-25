@@ -8,9 +8,10 @@ import like from '../assets/like.png'
 
 const PropertyCard = ({ property }) => {
   return (
-    <div className='md:w-[397px] w-full h-[566px] lg:mx-auto'>
+    <div className='md:w-[396px] w-full h-[545px] lg:w-[370px] mb-7'>
       <div >
-        <img src={property.image} alt={property.title} className='w-full h-[297px] object-cover rounded-t-[10px]' />
+        <img src={property.image} alt={property.title} className='w-full h-[297px] rounded-t-[10px] overflow-hidden' />
+        
       </div>
 
       <div className='bg-[#FFFFFF] border border-[#DDD8DB] rounded-b-[10px] p-6 '>
@@ -29,6 +30,7 @@ const PropertyCard = ({ property }) => {
             <img src={bathroom} alt="Bathroom icon" />
             <p className='font-[Outfit] font-normal text-[16px] text-[#666666]'>{property.numberOfBathrooms} Bathrooms</p>
           </div>
+         
 
         </div>
 
